@@ -1,0 +1,105 @@
+    ! ----- urxvt fonts -----------------------------------
+
+    ! the short names for fonts are in /usr/share/fonts/X11/misc/fonts.alias
+
+    ! to specify an X11 core font, just specify its name or prefix it with "x:". 
+    ! To specify an XFT-font, you need to prefix it with "xft:", e.g.:
+    !               urxvt -fn "xft:Bitstream Vera Sans Mono:pixelsize=15"
+    !               urxvt -fn "9x15bold,xft:Bitstream Vera Sans Mono"
+    !
+    ! should only be xft=fontconfig so these 'core' fonts should be changed. 
+    !
+    ! updated 2015-11-25
+
+    urxvt*font: xft:ProFont for Powerline:size=11
+    !!urxvt*boldFont: xft:DroidSansMono:pixelsize=14
+    !!urxvt*font:-*-ohsnap-medium-r-normal-*-11-*-*-*-*-*-*-*
+    xterm*dynamicColors: true
+    urxvt*dynamicColors: on
+
+    !! ----- urxvt --------------------------------------------
+
+    !! see: http://510x.se/notes/posts/Configuring_and_using_rxvt-unicode/
+    !!      http://lists.schmorp.de/pipermail/rxvt-unicode/
+
+    !!  # Dont do this: impossible to actually use (only if true, composite, tranparancy)
+    urxvt*.transparent: true
+    urxvt*scrollBar:        false
+    urxvt*scrollBar_right:  false
+    ! URxvt*.shading:   change the background (always)
+    !#                  0 to 99 darkens, 101 to 200 lightens
+    !#                  Dont think this is having any effect. Orignially 120
+    !#                  Only extreme (20 and 200) have any effect. Really should
+    !#                  change the actual BD colour
+    urxvt*shading:          20
+    !urxvt*termname:         muzo-commandement
+    !# termname : name must exist in the termcap database
+    urxvt*borderLess:       false
+    urxvt*savelines:        1000
+    urxvt*borderColor:      black
+    urxvt*underlineColor:   yellow
+    !#urxvt*cursorColor:        green                       handled by solarized
+    urxvt*pointerColor:     red
+   
+    !# Disabling the urxvt perl extention (too long to start up)
+    !# see man urxvtperl
+    !# 2015-12-11 reinstalled for colourscheme switching
+    !
+    urxvt*perl-ext: default
+    urxvt*perl-ext-common: default,clipboard
+    urxvt*perl-lib: /usr/local/bin/
+    urxvt*url-select.launcher: firefox
+    !! # from Xdefaults
+    URxvt*colorULMode: on
+    URxvt*colorUL: green3
+    !! this makes the prompt yellow, I thinkg
+    URxvt*colorIT: red
+    !! URxvt*colorBD: #DB6E00 overridded in the Seoul256 colorscheme
+    URxvt*colorRV: #ff0000
+    !! changes the prompt colour
+    URxvt*intensityStyles: true
+
+    !Disables the insanely annoying Ctrl+Shift shortcut that enters ISO14755 mode
+    URxvt.iso14755:    false
+    URxvt.iso14755_52: false
+
+
+! first two are the originals
+*fadeColor: #002b36
+*cursorColor: #93a1a1
+*pointerColorBackground: #586e75
+*pointerColorForeground: #93a1a1
+
+Xft*dpi:                96
+Xft*antialias:          true
+Xft*hinting:            full
+
+
+
+! color scheme
+*background: #101010
+*foreground: #88ddff
+! Black + DarkGrey
+*color0:  #334444
+*color8:  #496666
+! Red
+*color1:  #FF8855
+*color9:  #FF956F 
+! Green
+*color2:  #5EFFaf
+*color10: #aaffcc
+! Yellow
+*color3:  #FFFF77
+*color11: #FFFFA9
+! Blue
+*color4:  #5eAAFF
+*color12: #99ccFF
+! Mangenta
+*color5:  #ff8888
+*color13: #ff99bb
+! Cyan
+*color6:  #55ffff
+*color14: #AAFFFF
+! LightGrey + White
+*color7:  #FFFFee
+*color15: #ffffff

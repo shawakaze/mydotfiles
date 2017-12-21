@@ -1,0 +1,383 @@
+#
+# WMFS2 configuration file
+#
+
+# Possible file inclusion:
+# @include "file"
+
+# Multi theme section
+[themes]
+
+  [theme]
+     # No name mean default
+     # name = "default"
+
+     font = "fixed"
+     # Space between tiled clients
+     padding = 2
+
+     # Bars
+     bars_width = 14
+     bars_fg = "#a9e0cb"
+     bars_bg = "#212f2a"
+
+     # Element tags
+     tags_normal_fg = "#a0e4ff"
+     tags_normal_bg = "#111111"
+     # tags_normal_statusline = ""
+
+     tags_sel_fg    = "#252525"
+     tags_sel_bg    = "#94B086"
+     # tags_sel_statusline = ""
+
+     tags_occupied_fg = "#b79feb"
+     tags_occupied_bg = "#605773"
+     tags_occupied_statusline = "\R[0;0;100;1;#3E5A0F]"
+
+     tags_urgent_fg    = "#CC0000"
+     tags_urgent_bg    = "#111111"
+     # tags_urgent_statusline = ""
+
+     tags_border_color = "#344841"
+     tags_border_width = 1
+
+     # Frame / Client
+     client_normal_fg = "#666666"
+     client_normal_bg = "#000000"
+     client_normal_statusline = "\s[3;9;#121212;x] \s[2;8;#D3D3D3;x](1;client_close)"
+
+     client_sel_fg = "#f5d0e1"
+     client_sel_bg = "#62bea0"
+     client_sel_statusline = "\s[3;9;#121212;x] \s[2;8;#D3D3D3;x](1;client_close)"
+
+     # client_free_statusline = ""
+
+     frame_bg = "#000000"
+     client_titlebar_width = 0
+     client_border_width = 1
+
+   [/theme]
+
+[/themes]
+
+# Position:
+  #
+  # 0  Top
+  # 1  Bottom
+  # 2  Hide
+
+  # Element type:
+  #
+  # t  Tags
+  # s  Statustext (will take available space)
+  # y  Systray (can be set only ONE time among all element)
+  # l  Launcher (will be expended at launcher use)
+
+  [bar]
+     position = 0
+     screen = 0
+     elements = "tsy"   # element order in bar
+     theme = "default"
+  [/bar]
+  
+[tags]
+
+  # Tag wrapping navigation
+  circular = false
+
+  # Use no screen option or screen = -1 to set tag on each screen
+  [tag]
+      screen = -1
+      name = "term"
+      # statusline=""
+  [/tag]
+
+  [tag] name = "Webs" [/tag]
+  [tag] name = "Indonesia" [/tag]
+  [tag] name = "Kode" [/tag]
+  [tag] name = "Manado" [/tag]
+  [tag] name = "St. Paul" [/tag]
+  [tag] name = "Hacking" [/tag]
+
+  # Mousebinds associated to Tags element button
+  [mouse] button = "1" func = "tag_click" [/mouse]
+  [mouse] button = "4" func = "tag_next"  [/mouse]
+  [mouse] button = "5" func = "tag_prev"  [/mouse]
+
+
+[/tags]
+
+[client]
+
+  # Padding between clients (default: 0) :
+  padding = 15
+
+  # Give focus to new created client (default = false)
+  autofocus = false
+
+  theme = "default"
+  key_modifier = "Super"
+
+  # Focus type:
+  #  enter : focus follow mouse (default)
+  #  click : click to focus
+  #  everything-else : disable mouse focus support
+  focus = enter
+
+  [mouse] button = "1" func = "client_focus_click"    [/mouse]
+  [mouse] button = "1" func = "mouse_swap"            [/mouse]
+  [mouse] button = "2" func = "mouse_tab"             [/mouse]
+  [mouse] button = "3" func = "mouse_resize"          [/mouse]
+  [mouse] button = "4" func = "client_focus_next_tab" [/mouse]
+  [mouse] button = "5" func = "client_focus_prev_tab" [/mouse]
+
+[/client]
+
+[rules]
+  
+  [rule]
+      instance = "google-chrome"
+
+      # role   = ""
+      # name   = ""
+      # theme  = "default"
+
+      tag    = 1  # 2nd tag
+      screen = 0
+
+      free       = false
+      tab        = false
+      ignore_tag = false
+  [/rule]
+  
+  [rule]
+      instance = "gimp"
+
+      # role   = ""
+      # name   = "gimp"
+      # theme  = "default"
+
+      screen = 0
+
+      free       = true
+      tab        = false
+      ignore_tag = false
+  [/rule]
+  
+  [rule]
+      instance = "thunar"
+
+      # role   = ""
+      # name   = "thunar"
+      # theme  = "default"
+
+      screen = 0
+
+      free       = true
+      tab        = false
+      ignore_tag = false
+  [/rule]
+  
+  [rule]
+      instance = "xv"
+
+      # role   = ""
+      # name   = "mplayer"
+      # theme  = "default"
+
+      screen = 0
+
+      free       = true
+      tab        = false
+      ignore_tag = false
+  [/rule]
+  
+  [rule]
+      instance = "feh"
+
+      # role   = ""
+      # name   = "feh"
+      # theme  = "default"
+
+      screen = 0
+
+      free       = true
+      tab        = false
+      ignore_tag = false
+  [/rule]
+
+  [rule]
+      instance = "mpv"
+
+      # role   = ""
+      # name   = "feh"
+      # theme  = "default"
+
+      screen = 0
+
+      free       = true
+      tab        = false
+      ignore_tag = false
+  [/rule]
+
+[/rules]
+
+[launchers]
+
+  # command can be an uicb function or an uicb function + extension (see example)
+  [launcher]
+     name = "exec"
+     prompt = "Run:"
+
+     # Example of uicb + ext:
+     #   command = "spawn xterm -e"
+     command = "spawn"
+
+     width = 150
+  [/launcher]
+
+[/launchers]
+
+[layouts]
+        fg = "#BBB1A4"  
+        bg = "#292D23"    
+
+        # Border around the layout button.
+        border = false
+
+        # Value menu or switch.
+        system = "switch"
+
+        # Value left or right.
+        placement = "left"
+
+        # Keep layout geo for free layout
+        keep_layout_geo = false
+
+        # Symbol displayed for the selected layout in the list
+        selected_layout_symbol = ">"
+
+        # Width of layout button
+        # layout_button_width = 20
+
+        # Tiling layouts.
+        [layout] type = "tile_right"         symbol = "|>]" [/layout]
+        [layout] type = "tile_left"          symbol = "[<|" [/layout]
+        [layout] type = "tile_top"           symbol = "[T]" [/layout]
+        [layout] type = "tile_bottom"        symbol = "[B]" [/layout]
+        [layout] type = "tile_grid"          symbol = "[#]" [/layout]
+        [layout] type = "tile_grid_vertical" symbol = "[=]" [/layout]
+        [layout] type = "mirror_vertical"    symbol = "|||" [/layout]
+        [layout] type = "mirror_horizontal"  symbol = "=|=" [/layout] 
+                
+
+        # Other layouts.
+        [layout] type = "max"           symbol = "[M]" [/layout] 
+        [layout] type = "free"          symbol = "><" [/layout] 
+
+[/layouts]
+
+[keys]
+
+  [key] mod = {"Super"} key = "Return" func = "spawn" cmd = "urxvt" [/key]
+  
+  [key] mod = {"Shift", "Super"} key = "Return" func = "spawn" cmd = "firefox" [/key]
+  [key] mod = {"Super"} key = "i" func = "spawn" cmd = "termite -e alsamixer" [/key]
+  [key] mod = {"Shift","Super"} key = "i" func = "spawn" cmd = "termite -e ncmpcpp" [/key]
+  [key] mod = {"Super"} key = "o" func = "spawn" cmd = "mpcmenu" [/key]
+  [key] mod = {"Shift", "Super"} key = "o" func = "spawn" cmd = "termite -e irssi" [/key]
+  [key] mod = {"Super"} key = "u" func = "spawn" cmd = "termite -e ranger" [/key]
+  [key] mod = {"Shift", "Super"} key = "u" func = "spawn" cmd = "/home/xikuuky/.actions.d/runaction" [/key]
+  [key] mod = {"Super"} key = "t" func = "spawn" cmd = "skippy-xd" [/key]
+  [key] mod = {"Shift", "Super"} key = "t" func = "spawn" cmd = "brightnessmenu" [/key]
+
+  [key] mod = {"Control", "Alt"} key = "q" func = "quit" [/key]
+  [key] mod = {"Shift", "Super"} key = "r" func = "reload" [/key]
+
+  # Tag manipulation
+  [key] mod = {"Super"} key = "1" func = "tag_set" cmd = "0" [/key]
+  [key] mod = {"Super"} key = "2" func = "tag_set" cmd = "1" [/key]
+  [key] mod = {"Super"} key = "3" func = "tag_set" cmd = "2" [/key]
+  [key] mod = {"Super"} key = "4" func = "tag_set" cmd = "3" [/key]
+  [key] mod = {"Super"} key = "5" func = "tag_set" cmd = "4" [/key]
+  [key] mod = {"Super"} key = "6" func = "tag_set" cmd = "5" [/key]
+  [key] mod = {"Super"} key = "7" func = "tag_set" cmd = "6" [/key]
+  [key] mod = {"Super"} key = "8" func = "tag_set" cmd = "7" [/key]
+
+  [key] mod = {"Super", "Shift"} key = "1" func = "tag_client" cmd = "0" [/key]
+  [key] mod = {"Super", "Shift"} key = "2" func = "tag_client" cmd = "1" [/key]
+  [key] mod = {"Super", "Shift"} key = "3" func = "tag_client" cmd = "2" [/key]
+  [key] mod = {"Super", "Shift"} key = "4" func = "tag_client" cmd = "3" [/key]
+  [key] mod = {"Super", "Shift"} key = "5" func = "tag_client" cmd = "4" [/key]
+  [key] mod = {"Super", "Shift"} key = "6" func = "tag_client" cmd = "5" [/key]
+  [key] mod = {"Super", "Shift"} key = "7" func = "tag_client" cmd = "6" [/key]
+  [key] mod = {"Super", "Shift"} key = "8" func = "tag_client" cmd = "7" [/key]
+
+  [key] mod = {"Super"} key = "minus" func = "tag_del" [/key]
+  [key] mod = {"Super", "Shift"} key = "minus" func = "tag_new" [/key]
+
+  # tag function: cmd = nameofthetag
+  #[key] mod = {"Super"} key = "z" func = "tag" cmd = "2" [/key]
+
+  [key] mod = {"Super"} key = "q" func = "client_close" [/key]
+
+  # Focus next / prev client and next / prev tabbed client
+  [key] mod = { "Alt" }            key = "Tab" func = "client_focus_next" [/key]
+  [key] mod = { "Alt", "Shift" }   key = "Tab" func = "client_focus_prev" [/key]
+  [key] mod = { "Super" }          key = "Tab" func = "client_focus_next_tab" [/key]
+  [key] mod = { "Super", "Shift" } key = "Tab" func = "client_focus_prev_tab" [/key]
+
+  # Focus next client with direction
+  [key] mod = {"Super"} key = "h" func = "client_focus_left"   [/key]
+  [key] mod = {"Super"} key = "l" func = "client_focus_right"  [/key]
+  [key] mod = {"Super"} key = "k" func = "client_focus_top"    [/key]
+  [key] mod = {"Super"} key = "j" func = "client_focus_bottom" [/key]
+
+  # swap next client with direction:
+  [key] mod = {"Control", "Shift"} key = "h" func = "client_swap_left"   [/key]
+  [key] mod = {"Control", "Shift"} key = "l" func = "client_swap_right"  [/key]
+  [key] mod = {"Control", "Shift"} key = "k" func = "client_swap_top"    [/key]
+  [key] mod = {"Control", "Shift"} key = "j" func = "client_swap_bottom" [/key]
+
+  # Resize selected tiled client with direction
+  [key] mod = {"Super", "Shift"} key = "h" func = "client_resize_right"  cmd = "-20" [/key]
+  [key] mod = {"Super", "Shift"} key = "l" func = "client_resize_right"  cmd = "20" [/key]
+  [key] mod = {"Super", "Shift"} key = "k" func = "client_resize_bottom" cmd = "-20" [/key]
+  [key] mod = {"Super", "Shift"} key = "j" func = "client_resize_bottom" cmd = "20" [/key]
+
+  # Tabbing command
+  [key] mod = {"Alt", "Shift"} key = "h" func = "client_tab_left"   [/key]
+  [key] mod = {"Alt", "Shift"} key = "l" func = "client_tab_right"  [/key]
+  [key] mod = {"Alt", "Shift"} key = "k" func = "client_tab_top"    [/key]
+  [key] mod = {"Alt", "Shift"} key = "j" func = "client_tab_bottom" [/key]
+  [key] mod = {"Alt", "Shift"} key = "u" func = "client_untab" [/key]
+  [key] mod = {"Super"}        key = "t" func = "client_tab_next_opened" [/key]
+
+  # Layout manipulation
+  [key] mod = {"Super"}          key = "m" func = "layout_vmirror" [/key]
+  [key] mod = {"Super", "Shift"} key = "m" func = "layout_hmirror" [/key]
+  [key] mod = {"Super"}          key = "r" func = "layout_rotate_right" [/key]
+  [key] mod = {"Super", "Shift"} key = "r" func = "layout_rotate_left" [/key]
+
+  [key] mod = {"Control", "Super", "Alt"} key = "h" func = "layout_integrate_left" [/key]
+  [key] mod = {"Control", "Super", "Alt"} key = "j" func = "layout_integrate_bottom" [/key]
+  [key] mod = {"Control", "Super", "Alt"} key = "k" func = "layout_integrate_top" [/key]
+  [key] mod = {"Control", "Super", "Alt"} key = "l" func = "layout_integrate_right" [/key]
+
+  # Layout set historic travelling function (TESTING)
+  [key] mod = {"Super"} key = "o" func = "layout_prev_set" [/key]
+  [key] mod = {"Super", "Shift"} key = "o" func = "layout_next_set" [/key]
+
+  # Toggle client free/tile
+  [key] mod = {"Super"} key = "f" func = "client_toggle_free" [/key]
+
+  # Toggle client ignore_tag
+  [key] mod = {"Super", "Shift"} key = "f" func = "client_toggle_ignore_tag" [/key]
+
+  # Toggle infobar visibility
+  [key] mod = {"Super", "Shift"} key = "h" func = "infobar_toggle_hide" cmd = "default" [/key]
+
+  # Launcher
+  [key] mod = {"Super"} key = "p" func = "spawn" cmd = "dmenu_run -i -y 13 -o 0.8 -l 100 -w 500 -p '\$' -nb '#000000' -nf '#ebdbb2' -sb '#000000' -sf '#b8bb26' -fn 'Hack-12:normal'" [/key]
+
+[/keys]
