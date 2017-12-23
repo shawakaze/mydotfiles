@@ -1,0 +1,9 @@
+ #!/bin/sh
+ 
+ FG='#aaaaaa'
+ BG='#1a1a1a'
+ #FONT='-*-terminus-*-r-normal-*-*-120-*-*-*-*-iso8859-*'
+ FONT='Misc Ohsnap'
+ #conky | dzen2  -x '800' -w '600'  -fg $FG -bg $BG -fn $FONT &
+ #conky | dzen2 -fg $FG -bg $BG -x '800' -w '700' -fn $FONT -p 
+ conky | dzen2 -fg 'green' -bg 'black' -x '850' -h '15' -w '700' -fn 'Misc Ohsnap:size=12' -p 

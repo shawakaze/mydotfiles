@@ -24,11 +24,11 @@
      tags_normal_bg = "#000000"
      # tags_normal_statusline = ""
 
-     tags_sel_fg    = "#12FF0A"
+     tags_sel_fg    = "#42d9f4"
      tags_sel_bg    = "#000000"
      # tags_sel_statusline = ""
 
-     tags_occupied_fg = "#82C77F"
+     tags_occupied_fg = "#75c1ce"
      tags_occupied_bg = "#000000"
      tags_occupied_statusline = "\R[0;0;100;1;#000000]"
 

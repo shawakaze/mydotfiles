@@ -1,0 +1,69 @@
+-- Conky config for ArchBang
+-- by Mr Green
+-- modified by Muzo
+
+conky.config = {
+background = true,
+use_xft = true,
+font = 'Misc Ohsnapu:size=10',
+xftalpha = 1,
+update_interval = 1.0,
+total_run_times = 0,
+own_window = true,
+own_window_transparent = true,
+own_window_type = 'override',
+own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+own_window_colour = 'black',
+double_buffer = true,
+minimum_height = 400,
+maximum_width = 240,
+draw_shades = false,
+draw_outline = false,
+draw_borders = false,
+draw_graph_borders = false,
+default_color = 'white',
+default_shade_color = '000000',
+default_outline_color = 'd9d7d6',
+alignment = 'top_right',
+gap_x = 12,
+gap_y = 25,
+no_buffers = true,
+uppercase = false,
+cpu_avg_samples = 2,
+override_utf8_locale = false,
+color1 = 'white',
+color2 = 'black',
+color3 = '#ffd800',
+color4 = 'yellow'
+}
+
+conky.text = [[
+${color1}${alignc}${font Terminess Powerline:size=25}${time %H:%M:%S}${font}
+
+${color3}CPU ${color1}${cpubar cpu0}${color}
+${color3}RAM ${color1}${membar}${color}
+
+${font Ubuntu Mono derivative Powerline:size=12}${color3}SYSTEM ${color1}${font}${hr 2}
+${color1}$sysname $kernel $alignr $machine
+Host:$alignr$nodename
+Uptime:$alignr$uptime
+
+${font Ubuntu Mono derivative Powerline:size=12}${color3}TOP PROCESSES ${color1}${font}${hr 2}
+${color1}${top_mem name 1}${alignr}${top mem 1} %
+${top_mem name 2}${alignr}${top mem 2} %
+
+${font Ubuntu Mono derivative Powerline:size=12}${color3}MPD ${color1}${font}${hr 2}
+Status:  ${color4}${mpd_status}${color}
+${color1}Artist:  ${color4}${mpd_artist}${color}
+${color1}Song: ${color4} ${mpd_title} ${color}
+${color4}${mpd_bar 3,175}${color}
+
+${font Ubuntu Mono derivative Powerline:size=12}${color3}NET ${color1}${font}${hr 2}
+DSpd:$alignr${downspeed enp3s0} 
+DTtl:$alignr${totaldown enp3s0}
+
+${font Ubuntu Mono derivative Powerline:size=12}${color3}NVIDIA GFX ${color1}${font}${hr 2}
+Utility: $alignr${nvidia gpuutil}%
+FreeMemory: $alignr${nvidia memfree}
+
+]]
